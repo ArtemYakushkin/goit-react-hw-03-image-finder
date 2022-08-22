@@ -1,5 +1,7 @@
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
+import { MdOutlineSearch } from "react-icons/md"
+import { Header, Form, BtnSearch, InputSearch } from './Searchbar.styled';
 
 const { Component } = require("react");
 
@@ -26,13 +28,12 @@ class Searchbar extends Component {
 
     render() {
         return (
-            <header>
-                <form onSubmit={this.handleSubmit}>
-                    <button type="submit">
-                        <span>Search</span>
-                    </button>
-
-                    <input
+            <Header>
+                <Form onSubmit={this.handleSubmit}>
+                    <BtnSearch type="submit">
+                        <MdOutlineSearch size={20} />
+                    </BtnSearch>
+                    <InputSearch
                         type="text"
                         name='searchRequest'
                         value={this.state.searchRequest}
@@ -41,8 +42,8 @@ class Searchbar extends Component {
                         autoFocus
                         placeholder="Search images and photos"
                     />
-                </form>
-            </header>
+                </Form>
+            </Header>
         );
     };
 }

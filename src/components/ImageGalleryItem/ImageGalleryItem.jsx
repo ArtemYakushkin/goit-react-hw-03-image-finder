@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import { Image } from './ImageGalleryItem.styled';
 
 const ImageGalleryItem = ({ item, onClick }) => {
     return (
         <li>
-            <img src={item.webformatURL} alt={item.tag} onClick={() => onClick(item.largeImageURL)} />
+            <Image src={item.webformatURL} alt={item.tag} onClick={() => onClick(item.largeImageURL)} />
         </li>
     );
 };

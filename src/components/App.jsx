@@ -1,5 +1,6 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Container } from './App.styled';
 
 import Searchbar from "./Searchbar/Searchbar";
 import ImageGallery from './ImageGallery/ImageGallery';
@@ -79,7 +80,7 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <Container>
         <Searchbar onSubmit={this.handleSearchSubmit} />
         {this.state.error && <p>{this.state.error}</p>}
         {this.state.items.length > 0 && <ImageGallery items={this.state.items} onClick={this.onOpenModalWithLargeImage} />}
@@ -87,7 +88,7 @@ class App extends Component {
         {this.state.items.length > 0 && (<Button onLoadMore={this.onLoadMoreButton} isLoading={this.state.isLoading}/>)}
         {this.state.showModal && (<Modal closeModal={this.onModalClose} url={this.state.showModal}/>)}
         <ToastContainer autoClose={3000} />
-      </>
+      </Container>
     )
   }
 }

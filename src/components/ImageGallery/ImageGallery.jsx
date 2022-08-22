@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import ImageGalleryItem from "components/ImageGalleryItem/ImageGalleryItem";
+import { ListGallery, ContainerGallery } from './ImageGallery.styled';
 
 const ImageGallery = ({ items, onClick }) => {
     return (
-        <ul>
-            {items.map(item => {
-                return <ImageGalleryItem key={item.id} item={item} onClick={onClick} />
-            })}
-        </ul>
+        <ContainerGallery>
+            <ListGallery>
+                {items.map(item => {
+                    return <ImageGalleryItem key={item.id} item={item} onClick={onClick} />
+                })}
+            </ListGallery>
+        </ContainerGallery>
     );
 };
 
